@@ -1,0 +1,43 @@
+
+#form{
+position: relative;
+margin-bottom: 50px;
+padding-left: 0.1rem;
+border-radius: 10px;
+background-color: rgba(181, 179, 179, 0.927);
+}
+#avatar_image,#first_name,#last_name,#avtar_email{
+  width:50%;
+  margin-left: 3.5rem;
+}
+#first_name,#last_name{
+  margin-left: 4.2rem;
+}
+#avtar_email{
+  margin-left: 6.8rem;
+  
+}
+#add_avtar{
+  display: inline-block;
+  padding: 15px 25px;
+  
+  font-size: 24px;
+  cursor: pointer;
+  width:40%;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#add_avtar:hover {background-color: #3e8e41}
+
+#add_avtar:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

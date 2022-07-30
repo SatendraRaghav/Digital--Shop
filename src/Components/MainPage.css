@@ -1,0 +1,28 @@
+#avatarDetail {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    max-width:1000px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+#avatarDetail td, #avatarDetail th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+#avatarDetail tr:nth-child(even){background-color: #f2f2f2;}
+  
+#avatarDetail tr:hover {background-color: #ddd;}
+  
+#avatarDetail th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #04AA6D;
+    color: white;
+}
+
+
