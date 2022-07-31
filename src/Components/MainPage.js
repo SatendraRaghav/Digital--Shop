@@ -38,8 +38,9 @@ const MainPage = () => {
   console.log(dataList);
   return (
     <>
+    
     <AvatarForm />
-    <div id="avatar_Container">
+   
       <table id="avatarDetail">
         <thead>
         <tr>
@@ -65,7 +66,7 @@ const MainPage = () => {
           );
         })}
       </table>
-    </div>
+    
     </>
   );
 };

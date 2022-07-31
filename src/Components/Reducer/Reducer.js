@@ -2,14 +2,23 @@ const initialValue  = {
     obj:[],
     virtualObj:{
         name:"",
-        email:"",
-        mobileNumber:"" ,
-        avatar_image:"",
+        userEmail:"",
+        mobileNumber:"" 
+              
+    },
+    avatar:{
+        email:""  ,
+        avatar:"",
         first_name:"",
         last_name:""  ,
-        avatar_email:""         
     },
-    mainLogic:false,
+    virtualAvatar:{
+        email:"",
+        avatar:"",
+        first_name:"",
+        last_name:""  ,
+    },
+    mainLogic:true,
     data:[],
     
 };
@@ -20,6 +29,10 @@ const reducer = (state,action)=>{
         return{...state,obj:action.payload}
      case "saveVartualFormData":
         return{...state,virtualObj:action.payload}
+     case "saveVirtualAvatar":
+        return{...state,virtualAvatar:action.payload}
+     case "saveAvatar":
+        return{...state,avatar:action.payload}  
      case "mainPage":
             return{...state,mainLogic:action.payload}
      case "setData":

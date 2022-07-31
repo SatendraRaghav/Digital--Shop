@@ -1,7 +1,15 @@
-input[type=text],input[type=email],input[type=file],input[type=number] select {
+
+form{
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  color:#fefefe
+}
+
+input[type=text],input[type=email],input[type=url],input[type=number] select {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 2rem 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -10,7 +18,7 @@ input[type=text],input[type=email],input[type=file],input[type=number] select {
   
   input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: greenyellow;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -28,9 +36,15 @@ input[type=text],input[type=email],input[type=file],input[type=number] select {
   
   div {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    padding: 3rem;
    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   
+  }
+  .login{
+    color:white;
+    font-weight: bolder;
   }
 
 

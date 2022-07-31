@@ -10,6 +10,18 @@ export const saveVartualFormData = (x) =>{
       payload:x
    }
 }
+export const saveVirtualAvatar = (x) =>{
+   return {
+      type:"saveVartualAvatar",
+      payload:x
+   }
+}
+export const saveAvatar = (x) =>{
+   return {
+      type:"saveAvatar",
+      payload:x
+   }
+}
 export const mainPage = (x) =>{
    return {
       type:"mainPage",

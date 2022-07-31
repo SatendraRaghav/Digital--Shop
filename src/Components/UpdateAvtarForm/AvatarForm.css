@@ -1,43 +1,54 @@
+body{
+  margin:none;
+}
+#div{
+  background: url("https://media.istockphoto.com/photos/shadow-of-man-wearing-a-heros-cape-picture-id1279024640?k=20&m=1279024640&s=612x612&w=0&h=dvSPKHIt0JGiuMPvpLA05oAFHDuMtTi4Ezmyp0bE0Y4=");
+  background-position: center;
+  height:auto;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
 
+}
 #form{
 position: relative;
-margin-bottom: 50px;
+/* margin-bottom: 50px; */
 padding-left: 0.1rem;
 border-radius: 10px;
-background-color: rgba(181, 179, 179, 0.927);
+color:black;
+font-weight: bolder;
+
 }
-#avatar_image,#first_name,#last_name,#avtar_email{
+#avatar_image,#first_name,#last_name,#avatar_email{
   width:50%;
-  margin-left: 3.5rem;
+  margin-left: 10%;
 }
 #first_name,#last_name{
-  margin-left: 4.2rem;
+  margin-left: 12%;
 }
-#avtar_email{
-  margin-left: 6.8rem;
+#avatar_email{
+  margin-left: 15%;
   
 }
-#add_avtar{
+#add_avatar{
   display: inline-block;
   padding: 15px 25px;
   
   font-size: 24px;
   cursor: pointer;
-  width:40%;
+  width:60%;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: tomato;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-
-#add_avtar:hover {background-color: #3e8e41}
-
-#add_avtar:active {
+input[type=submit]:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+

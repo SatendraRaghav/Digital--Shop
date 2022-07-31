@@ -4,8 +4,22 @@ body{
 }
 header{
     
-   background-color: #f1f1f1;
+   
    padding: 20px;
      text-align: center;
+     margin: 0;
      margin-bottom: 1rem;
+     border-radius: 3em;
+     
+ }
+ #header{
+    background-color:cornflowerblue;
+ }
+ .companyName{
+    font-weight: bolder;
+    color: green;
+ }
+ .fName{
+   font-weight: bolder;
+   color:rgba(40, 10, 158, 0.988);
  }

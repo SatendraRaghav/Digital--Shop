@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Form.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -28,8 +29,11 @@ function Form() {
       {myState.mainLogic ? (
         <MainPage />
       ) : (
-        <div>
-          <form onSubmit={submitHandler}>
+        <div style={{backgroundImage: "url(/images/istockphoto-1271503712-612x612.jpg)"}}>
+           <h1 className = "login">Please Login to see your Super Avatar</h1><br></br><br></br>
+          <form onSubmit={submitHandler} >
+            
+             
             <label htmlFor="name">Enter Your Name :</label>
             <br />
             <input
@@ -47,8 +51,8 @@ function Form() {
               type="email"
               onChange={inputFormHandler}
               id="email"
-              name="email"
-              value={myState.virtualObj.email}
+              name="userEmail"
+              value={myState.virtualObj.userEmail}
               placeholder="write your Email"
               required
             />
@@ -63,7 +67,8 @@ function Form() {
               placeholder="write your Mobile Number"
               required
             />
-            <input type="submit" value="Submit"></input>
+            <input type="submit" value="Submit"></input><br/><br/>
+          
           </form>
         </div>
       )}
