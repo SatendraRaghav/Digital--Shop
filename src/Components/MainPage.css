@@ -13,6 +13,47 @@ img{
   max-width:200px;
   height:10vh;
 }
+button{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #60a062;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#updateH1{
+  background-color: rgb(94, 170, 177);
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  margin: 3rem 1rem;
+  position: relative;
+}
+#updateButtonRow{
+  background-color: rgb(106, 157, 161);
+  padding: 0;
+  margin: 0;
+}
+#updateButton{
+  padding: 10px 15px;
+  font-size: 10px;
+ 
+  box-shadow: 0 4px #999;
+}
+button:hover{
+  background-color: #33a337;
+}
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 #avatarDetail td, #avatarDetail th {
     border: 1px solid #ddd;
     padding: 1vh 1vw;
@@ -30,9 +71,13 @@ img{
     background-color: #04AA6D;
     color: white;
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:700px) {
   #avatarDetail, #avatarDetail td, #avatarDetail th {
     font-size: 2.65vw;
+}
+button{
+  font-size: 2vw;
+  padding: 5px 10px;
 }
 
 }

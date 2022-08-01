@@ -26,11 +26,12 @@ font-weight: bolder;
   margin-left: 10%;
   
 }
+
 #first_name,#last_name{
-  margin-left: 12%;
+  margin-left: 12.5%;
 }
 #avatar_email{
-  margin-left: 18%;
+  margin-left: 19%;
   
 }
 #add_avatar{

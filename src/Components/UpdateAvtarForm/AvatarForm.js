@@ -2,7 +2,7 @@ import React from "react";
 import "./AvatarForm.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { saveAvatar, setData } from "../Reducer/Action";
+import { saveAvatar, setData, updatePage } from "../Reducer/Action";
 
 function AvatarForm() {
   const myState1 = useSelector((state) => {
@@ -17,11 +17,21 @@ function AvatarForm() {
 
   const avatarSubmitHandler = (e) => {
     e.preventDefault();
-    dispatch(setData([...myState1.data, myState1.avatar]));
-    dispatch(saveAvatar({ ...myState1.virtualAvatar }));
-    window.alert(
-      "Your Avatar added successfully, Now you are warrior of earth"
-    );
+    console.log(myState1.updateLogic);
+    if (myState1.updateLogic) {
+      const updateItem = myState1.data.filter((elem) => {
+        return elem.id !== myState1.avatar.id;
+      });
+      dispatch(setData([...updateItem, myState1.avatar]));
+      dispatch(saveAvatar({ ...myState1.virtualAvatar }));
+      dispatch(updatePage(false));
+    } else {
+      dispatch(setData([...myState1.data, myState1.avatar]));
+      dispatch(saveAvatar({ ...myState1.virtualAvatar }));
+      window.alert(
+        "Your Avatar added successfully, Now you are warrior of earth"
+      );
+    }
   };
 
   return (
@@ -35,7 +45,7 @@ function AvatarForm() {
             <input
               type="url"
               name="avatar"
-              value={myState1.avatar.avatar_image}
+              value={myState1.avatar.avatar}
               onChange={inputAvatarFormHandler}
               id="avatar_image"
               placeholder=" Avatar Image"
@@ -71,7 +81,7 @@ function AvatarForm() {
               onChange={inputAvatarFormHandler}
               name="email"
               id="avatar_email"
-              value={myState1.avatar.avatar_email}
+              value={myState1.avatar.email}
               placeholder="write your Email"
               required
             />

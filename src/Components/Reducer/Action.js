@@ -28,6 +28,12 @@ export const mainPage = (x) =>{
       payload:x
    }
 }
+export const updatePage = (x) =>{
+   return {
+      type:"updatePage",
+      payload:x
+   }
+}
 export const setData = (x) =>{
    return {
       type:"setData",

@@ -18,6 +18,7 @@ const initialValue = {
     last_name: "",
   },
   mainLogic: false,
+  updateLogic: false,
   data: [],
 };
 
@@ -35,6 +36,8 @@ const reducer = (state, action) => {
       return { ...state, mainLogic: action.payload };
     case "setData":
       return { ...state, data: action.payload };
+    case "updatePage":
+      return { ...state, updateLogic: action.payload };
     default:
       return initialValue;
   }
