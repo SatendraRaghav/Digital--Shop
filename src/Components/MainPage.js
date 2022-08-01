@@ -28,28 +28,29 @@ const MainPage = () => {
   }, []);
 
   const dataList = myStateData.data;
-  const deleteHandler = (x)=>{
-    
-    const newList = dataList.filter((elem)=>{
-            return elem.first_name !=  x
-    })
+  const deleteHandler = (x) => {
+    const newList = dataList.filter((elem) => {
+      return elem.first_name !== x;
+    });
     dispatch(setData(newList));
-  }
+  };
+  const updateHandler = (x) => {
+    window.alert(x);
+  };
   console.log(dataList);
   return (
     <>
-    
-    <AvatarForm />
-   
+      <AvatarForm />
+
       <table id="avatarDetail">
         <thead>
-        <tr>
-          <th>Avatar</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Delete Avatar</th>
-        </tr>
+          <tr>
+            <th>Avatar</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Delete Avatar</th>
+          </tr>
         </thead>
 
         {myStateData.data.map((elem) => {
@@ -61,12 +62,15 @@ const MainPage = () => {
               <td>{elem.first_name}</td>
               <td>{elem.last_name}</td>
               <td>{elem.email}</td>
-              <td><button  onClick={()=>deleteHandler(elem.first_name)}>Delete</button></td>
+              <td>
+                <button onClick={() => deleteHandler(elem.first_name)}>
+                  Delete
+                </button>
+              </td>
             </tr>
           );
         })}
       </table>
-    
     </>
   );
 };

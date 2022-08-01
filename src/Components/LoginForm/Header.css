@@ -5,7 +5,8 @@ body{
 header{
     
    
-   padding: 20px;
+   padding-bottom: 20px;
+   padding-top: 0;
      text-align: center;
      margin: 0;
      margin-bottom: 1rem;
@@ -13,7 +14,8 @@ header{
      
  }
  #header{
-    background-color:cornflowerblue;
+    background-color:rgba(241, 241, 241, 0);
+    box-shadow: 2px 2px 2px rgb(122, 175, 219); ;
  }
  .companyName{
     font-weight: bolder;

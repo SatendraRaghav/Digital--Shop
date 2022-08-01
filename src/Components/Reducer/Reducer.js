@@ -1,46 +1,43 @@
-const initialValue  = {
-    obj:[],
-    virtualObj:{
-        name:"",
-        userEmail:"",
-        mobileNumber:"" 
-              
-    },
-    avatar:{
-        email:""  ,
-        avatar:"",
-        first_name:"",
-        last_name:""  ,
-    },
-    virtualAvatar:{
-        email:"",
-        avatar:"",
-        first_name:"",
-        last_name:""  ,
-    },
-    mainLogic:true,
-    data:[],
-    
+const initialValue = {
+  obj: [],
+  virtualObj: {
+    name: "",
+    userEmail: "",
+    mobileNumber: "",
+  },
+  avatar: {
+    email: "",
+    avatar: "",
+    first_name: "",
+    last_name: "",
+  },
+  virtualAvatar: {
+    email: "",
+    avatar: "",
+    first_name: "",
+    last_name: "",
+  },
+  mainLogic: false,
+  data: [],
 };
 
-const reducer = (state,action)=>{
-    switch(action.type){
-     case "saveFormData":
-        return{...state,obj:action.payload}
-     case "saveVartualFormData":
-        return{...state,virtualObj:action.payload}
-     case "saveVirtualAvatar":
-        return{...state,virtualAvatar:action.payload}
-     case "saveAvatar":
-        return{...state,avatar:action.payload}  
-     case "mainPage":
-            return{...state,mainLogic:action.payload}
-     case "setData":
-                return{...state,data:action.payload}
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "saveFormData":
+      return { ...state, obj: action.payload };
+    case "saveVartualFormData":
+      return { ...state, virtualObj: action.payload };
+    case "saveVirtualAvatar":
+      return { ...state, virtualAvatar: action.payload };
+    case "saveAvatar":
+      return { ...state, avatar: action.payload };
+    case "mainPage":
+      return { ...state, mainLogic: action.payload };
+    case "setData":
+      return { ...state, data: action.payload };
     default:
-        return initialValue;
-
-    }
-}    
+      return initialValue;
+  }
+};
 
 export default reducer;

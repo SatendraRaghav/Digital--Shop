@@ -2,8 +2,9 @@ body{
   margin:none;
 }
 #div{
-  background: url("https://media.istockphoto.com/photos/shadow-of-man-wearing-a-heros-cape-picture-id1279024640?k=20&m=1279024640&s=612x612&w=0&h=dvSPKHIt0JGiuMPvpLA05oAFHDuMtTi4Ezmyp0bE0Y4=");
-  background-position: center;
+  border-radius: 50px;
+
+    box-shadow: 16px 16px 2px rgba(165, 162, 162, 0.264); ;
   height:auto;
   width:80%;
   margin-left: auto;
@@ -12,7 +13,7 @@ body{
 }
 #form{
 position: relative;
-/* margin-bottom: 50px; */
+
 padding-left: 0.1rem;
 border-radius: 10px;
 color:black;
@@ -21,13 +22,15 @@ font-weight: bolder;
 }
 #avatar_image,#first_name,#last_name,#avatar_email{
   width:50%;
+  margin: 10px 0;
   margin-left: 10%;
+  
 }
 #first_name,#last_name{
   margin-left: 12%;
 }
 #avatar_email{
-  margin-left: 15%;
+  margin-left: 18%;
   
 }
 #add_avatar{
