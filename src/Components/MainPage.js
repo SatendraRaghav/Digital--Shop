@@ -34,9 +34,6 @@ const MainPage = () => {
     });
     dispatch(setData(newList));
   };
-  const updateHandler = (x) => {
-    window.alert(x);
-  };
   console.log(dataList);
   return (
     <>
