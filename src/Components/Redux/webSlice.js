@@ -11,13 +11,18 @@ const initialValue = {
     cartList:[],
     cartBoolean:false,
     loginBoolean:false,
-    userData:[]
+    formComplete:false,
+    userData:[],
+    nav:false,
+    payFinal:false,
+    uniqueList:[]
 }
 const webSlice = createSlice({
  name:"webReducer",
  initialState:initialValue,
  reducers:{
     setList:(state,action)=>{state.list=[...action.payload]},
+    setUniqueList:(state,action)=>{state.uniqueList=[...action.payload]},
     setDemoList:(state,action)=>{state.demoList=[...action.payload]},
     setProduct:(state,action)=>{state.product=[action.payload]},
     isProductRender:(state,action)=>{state.productBoolean=action.payload},
@@ -27,11 +32,14 @@ const webSlice = createSlice({
     cartCount:(state,action)=>{state.cart += action.payload},
   setCartList:(state,action)=>{state.cartList = action.payload},
   setLogin:(state,action)=>{state.loginBoolean = action.payload},
+  setLogComplete:(state,action)=>{state.formComplete = action.payload},
   setUserData:(state,action)=>{state.userData=action.payload},
+  setNav:(state,action)=>{state.nav=action.payload},
+  setPayFinal:(state,action)=>{state.payFinal = action.payload},
   },
 })
 
 
 export default webSlice.reducer;
-export const{setList,setDemoList,setLogin,setProduct,isProductRender,setFilterPara,isPaymentRender,
-isCartRender,cartCount,setCartList,setUserData}= webSlice.actions;
+export const{setList,setDemoList,setLogin,setLogComplete,setProduct,isProductRender,setFilterPara,isPaymentRender,
+isCartRender,cartCount,setCartList,setUserData,setNav,setPayFinal,setUniqueList}= webSlice.actions;

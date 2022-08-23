@@ -4,7 +4,9 @@ import {
   isCartRender,
   isPaymentRender,
   isProductRender,
-  setLogin
+  setLogin,
+  setNav,
+  setPayFinal
 } from "../Redux/webSlice";
 
 const Header = () => {
@@ -22,14 +24,25 @@ const Header = () => {
     } else if (myState.cartBoolean) {
       dispatch(isCartRender(false));
       return;
-    } else if (myState.productBoolean) {
+    }else if (myState.loginBoolean) {
+      dispatch(setLogin(false))
+      return;
+    }else if (myState.nav) {
+      dispatch(setNav(false))
+      return;
+    }
+     else if (myState.productBoolean) {
       dispatch(isProductRender(false));
+      return;
+    }
+    else if (myState.payFinal) {
+      dispatch(setPayFinal(false));
       return;
     }
     return;
   };
   const navHandler = ()=>{
-    
+    dispatch(setNav(true))
   }
   
   return (
@@ -39,7 +52,7 @@ const Header = () => {
           <button class="ml-1 mr-2" onClick={navHandler}>
             <img src="../images/nav.jpg" class="h-6 mb-0 pb-0" />
           </button>
-          <span class="mb-2 pb-2 ml-3">croma</span>
+          <span class="mb-2 pb-2 ml-3">Raghav Store</span>
           <div class=" float-right mx-3 rounded-xl bg-white">
             <button
               onClick={cartHandler}
@@ -59,16 +72,16 @@ const Header = () => {
         <div class="text-center">
           <input
             type="text"
-            class=" my-2 rounded-md w-[98%]"
+            class=" my-2 rounded-md w-[98%]  focus:bg-slate-500 pl-1 focus:border-none focus:text-white placeholder:text-gray-600"
             placeholder=" What are you looking for ?"
           ></input>
         </div>
       </div>
 
      
-       {(myState.productBoolean||myState.cartBoolean||myState.payment)?( <button
+       {(myState.productBoolean||myState.cartBoolean||myState.payment||myState.loginBoolean||myState.nav||myState.payFinal)?( <button
         onClick={backHandler}
-        class="text-4xl text-white hover:text-green-500 sticky top-0"
+        class="text-4xl text-white w-[100vw] bg-gray-800 hover:text-green-500 text-left sticky top-0"
       >&larr; </button>):""}
      
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux/es/exports";
-import { setCartList, isPaymentRender, cartCount, setProduct } from "./Redux/webSlice";
+import { setCartList, isPaymentRender, cartCount, setProduct } from "../Redux/webSlice";
 
 const ProductDetails = () => {
   const state = useSelector((state) => {
@@ -18,7 +18,7 @@ const ProductDetails = () => {
   const cartClickHandler = () => {
     dispatch(cartCount(1));
     const data = state.product[0];
-    const data1 = {...data,id:Math.random()}
+    const data1 = {...data,id:Math.random()};
     dispatch(setProduct(data1));
     dispatch(setCartList([...state.cartList,...state.product]));
   };
@@ -27,7 +27,6 @@ const ProductDetails = () => {
     <div class="bg-black h-[100vh] text-white">
       {state.cartBoolean
         ? state.cartList.map((elem, index) => {
-            console.log(elem);
             return (
               <div key={index}>
                 <div class=" w-[100%] h-[20vh] md:h-[35vh] lg:h-[45vh] mt-12  mr-auto ml-auto ">

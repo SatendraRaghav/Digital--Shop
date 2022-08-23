@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { cartCount, setCartList } from "../Redux/webSlice";
+import { cartCount, setCartList,  setPayFinal} from "../Redux/webSlice";
 
 const Bill = () => {
   const state = useSelector((state) => {
@@ -22,6 +22,13 @@ const Bill = () => {
       dispatch(setCartList([]));
     }
   };
+  const payHandler = ()=>{
+    if(state.formComplete){
+        dispatch(setPayFinal(true))
+    }else{
+       alert('Please complete Login Form')
+    }
+  }
   return (
     <div class="bg-black h-max text-white mb-4">
       {state.cart > 0 ? (
@@ -78,7 +85,8 @@ const Bill = () => {
                 &#8377;{price > 65 ? Math.ceil(price) : Math.ceil(price + 15)}
               </div>
             </div>
-            <button class="bg-sky-900 hover:bg-sky-700 active:bg-green-900 rounded-xl w-full fixed bottom-0  py-2">
+            <button class="bg-sky-900 hover:bg-sky-700 active:bg-green-900 rounded-xl w-full fixed bottom-0  py-2"
+            onClick={payHandler}>
               Pay Now
             </button>
           </div>

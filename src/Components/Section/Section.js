@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import axios from "axios";
-import { setList } from "../Redux/webSlice";
+
+import {setUniqueList } from "../Redux/webSlice";
 import { fetchProduct } from "../ApiCall/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Content from "./Content";
@@ -9,18 +9,23 @@ const Section = () => {
   const product = useSelector((state) => {
     return state.productSlice;
   });
+  const state = useSelector((state) => {
+    return state.webReducer;
+  });
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProduct());
-  }, []);
-
-  const uniqueList = [
-    ...new Set(
-      product.product.map((elem) => {
-        return elem.category;
-      })
-    ),
-  ];
+    
+  },[]);
+  useEffect(()=>{dispatch(setUniqueList([ ...new Set(
+    product.product.map((elem) => {
+      return elem.category;
+    })
+  )]));},
+  [product])
+  
+  
 
   return (
     <>
@@ -40,10 +45,10 @@ const Section = () => {
         ) : null}
         {!product.loading && product.product.length ? (
           <div>
-            {uniqueList.map((elem, index) => {
+            {state.uniqueList.map((elem, index) => {
               return (
-                <section key={index} class="text-white bg-black  ">
-                  <h1 class="capitalize font-bold ml-6">{elem}</h1>
+                <section key={index} class="text-white bg-black" >
+                  <h1  id={elem} class="capitalize font-bold ml-6">{elem}</h1>
                   <Content para={elem} />
                 </section>
               );
