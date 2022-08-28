@@ -18,7 +18,7 @@ useEffect(()=>{
 })
   return (
     <div class = "bg-sky-800 text-yellow-50 w-full">
-      <h1 class="text-center relative">Today Offer<span class="bg-red-600 absolute right-2 p-2 rounded-lg">Offer Ends in {`${24-hours}:${60-min}:${60-sec}`}</span></h1>
+      <h1 class="sm:text-center pl-2 relative">Today Offer<span class="bg-red-600 absolute right-2 px-2 py-0 md:py-2 rounded-lg">Offer Ends in {`${24-hours}:${60-min}:${60-sec}`}</span></h1>
      <div class = " w-11/12  text-yellow-100 text-center">
      10% off on all clothes products by paying axis bank 🥳. </div>  
     </div>

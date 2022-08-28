@@ -6,7 +6,7 @@ import {
   isProductRender,
   setLogin,
   setNav,
-  setPayFinal
+  setPayFinal,
 } from "../Redux/webSlice";
 
 const Header = () => {
@@ -24,39 +24,39 @@ const Header = () => {
     } else if (myState.cartBoolean) {
       dispatch(isCartRender(false));
       return;
-    }else if (myState.loginBoolean) {
-      dispatch(setLogin(false))
+    } else if (myState.loginBoolean) {
+      dispatch(setLogin(false));
       return;
-    }else if (myState.nav) {
-      dispatch(setNav(false))
+    } else if (myState.nav) {
+      dispatch(setNav(false));
       return;
-    }
-     else if (myState.productBoolean) {
+    } else if (myState.productBoolean) {
       dispatch(isProductRender(false));
       return;
-    }
-    else if (myState.payFinal) {
+    } else if (myState.payFinal) {
       dispatch(setPayFinal(false));
       return;
     }
     return;
   };
-  const navHandler = ()=>{
-    dispatch(setNav(true))
-  }
-  
+  const navHandler = () => {
+    dispatch(setNav(true));
+  };
+
   return (
     <>
       <div class="pt-4 border-b-2 border-gray-500 w-full bg-black">
-        <header class="w-[100%] text-white text-2xl">
+        <header class="w-[100%] text-white text-3xl">
           <button class="ml-1 mr-2" onClick={navHandler}>
             <img src="../images/nav.jpg" class="h-6 mb-0 pb-0" />
           </button>
-          <span class="mb-2 pb-2 ml-3">Raghav Store</span>
-          <div class=" float-right mx-3 rounded-xl bg-white">
+          <span class="mb-3  ml-3 text-xl sm:text-2xl">
+            Raghav Store
+          </span>
+          <div class=" float-right sm:mx-3 rounded-xl bg-white">
             <button
               onClick={cartHandler}
-              class="float-right mx-3 active:bg-green-500 hover:bg-sky-500"
+              class="float-right sm:mx-3 active:bg-green-500 hover:bg-sky-500"
             >
               <img src="../images/cart.webp" class="h-6 mb-0 pb-0" />
             </button>
@@ -65,7 +65,10 @@ const Header = () => {
               {myState.cart}
             </span>
           </div>
-          <button onClick={()=>dispatch(setLogin(true))} class=" float-right  ml-0 pl-0">
+          <button
+            onClick={() => dispatch(setLogin(true))}
+            class=" float-right mr-2 ml-0 pl-0"
+          >
             <img src="../images/loginForm.jpg" class="h-6 mb-0 pb-0" />
           </button>
         </header>
@@ -78,12 +81,21 @@ const Header = () => {
         </div>
       </div>
 
-     
-       {(myState.productBoolean||myState.cartBoolean||myState.payment||myState.loginBoolean||myState.nav||myState.payFinal)?( <button
-        onClick={backHandler}
-        class="text-4xl text-white w-[100vw] bg-gray-800 hover:text-green-500 text-left sticky top-0"
-      >&larr; </button>):""}
-     
+      {myState.productBoolean ||
+      myState.cartBoolean ||
+      myState.payment ||
+      myState.loginBoolean ||
+      myState.nav ||
+      myState.payFinal ? (
+        <button
+          onClick={backHandler}
+          class="text-4xl text-white w-[100vw] bg-gray-800 hover:text-green-500 text-left sticky top-0"
+        >
+          &larr;{" "}
+        </button>
+      ) : (
+        ""
+      )}
     </>
   );
 };
