@@ -23,7 +23,7 @@ In all projects, I am mostly responsible of front end part. I work on latest fra
 ![cart1Page](https://user-images.githubusercontent.com/95141040/187072460-d52342e5-b7eb-4c3d-baf2-30b4abb17873.png)
 ![cartPage](https://user-images.githubusercontent.com/95141040/187072464-c449e5f1-244e-4e9f-b034-156fdfea8bbc.png)
  
-# Sign Up Form
+# Login/Sign Up Form
 ![DigitalStoreLoginPage](https://user-images.githubusercontent.com/95141040/187072485-1c90f348-a897-425f-b4ea-a26695f4de57.jpeg)
 
 # Product Detail UI
