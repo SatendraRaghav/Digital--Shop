@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {  setProduct, isProductRender } from "../Redux/webSlice";
+import { Link } from "react-router-dom";
 
 
 const Content = ({ para }) => {
+  console.log("Content App");
   useEffect(()=>{
     filterData(para)
   },[])
@@ -14,16 +16,16 @@ const Content = ({ para }) => {
   });
 
   function filterData(x){
-    console.log(x);
+    console.log("Filter func in Content App");
     const updateData = state.product.filter((elem) => {
       return elem.category === x;
     });
-    console.log(updateData);
+    // console.log(updateData);
     setData([...updateData])
   };
    
-  console.log("demoList");
-  console.log(data);
+  // console.log("demoList");
+  // console.log(data);
   return (
     <div>
       <div  class="flex overflow-auto ">
@@ -33,15 +35,15 @@ const Content = ({ para }) => {
               key={elem.id}
               class="flex-none text-center w-[40%] px-2 py-2  rounded-md my-2 mx-2 bg-slate-800  md:w-2/6 lg:w-1/5"
             >
+              
               <button
               
               class="active:bg-gray-700 "
               onClick={()=>{
-                dispatch(isProductRender(true))
                 dispatch(setProduct(elem))
               }}
             >
-             
+             <Link to="/Product">
               <img
                 class="h-[20vh] w-11/12 max-w-[140px] rounded-full mr-auto ml-auto"
                 src={elem.image}
@@ -54,6 +56,7 @@ const Content = ({ para }) => {
               <p>&#8377;{elem.price}</p>
 
               <p>Rating-{elem.rating.rate}</p>
+              </Link>
               </button>
             </div>
           );

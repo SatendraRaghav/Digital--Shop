@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 
-import {setUniqueList } from "../Redux/webSlice";
+import { setUniqueList } from "../Redux/webSlice";
 import { fetchProduct } from "../ApiCall/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Content from "./Content";
+import { Link } from "react-router-dom";
 
 const Section = () => {
   const product = useSelector((state) => {
@@ -12,19 +13,7 @@ const Section = () => {
   const state = useSelector((state) => {
     return state.webReducer;
   });
-
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchProduct());
-    
-  },[]);
-  useEffect(()=>{dispatch(setUniqueList([ ...new Set(
-    product.product.map((elem) => {
-      return elem.category;
-    })
-  )]));},
-  [product])
-  
   
 
   return (
@@ -32,11 +21,14 @@ const Section = () => {
       <div>
         {product.loading && (
           <button class=" my-12  p-8  text-white">
-            <svg class="animate-spin h-5 w-5 mr-3 ... bg-white" viewBox="5 0 24 24">
-             ...
+            <svg
+              class="animate-spin h-5 w-5 mr-3 ... bg-white"
+              viewBox="5 0 24 24"
+            >
+              ...
             </svg>
             Loading...
-            </button>
+          </button>
         )}
         {!product.loading && product.error ? (
           <div class="text-center mt-12 text-white">
@@ -47,9 +39,13 @@ const Section = () => {
           <div>
             {state.uniqueList.map((elem, index) => {
               return (
-                <section key={index} class="text-white bg-black" >
-                  <h1  id={elem} class="capitalize font-bold ml-6">{elem}</h1>
+                <section key={index} class="text-white bg-black">
+                  <h1 id={elem} class="capitalize font-bold ml-6">
+                    {elem}
+                  </h1>
+                  {/* <Link to="/Content"> */}
                   <Content para={elem} />
+                  {/* </Link> */}
                 </section>
               );
             })}

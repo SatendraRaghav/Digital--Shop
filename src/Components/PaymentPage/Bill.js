@@ -6,21 +6,17 @@ const Bill = () => {
   const state = useSelector((state) => {
     return state.webReducer;
   });
-  const [list, setList] = useState(state.cartList);
+  // const [list, setList] = useState(state.cartList);
   const dispatch = useDispatch();
 
-  const price = list.reduce((total, elem) => {
+  const price = state.cartList.reduce((total, elem) => {
     return total + elem.price;
   }, 0);
   const removeHandler = (x) => {
-    const newCart = list.filter((elem) => {
+    const newCart = state.cartList.filter((elem) => {
       return x.id != elem.id;
     });
-    setList(newCart);
-    dispatch(cartCount(-1));
-    if (state.cart === 1) {
-      dispatch(setCartList([]));
-    }
+      dispatch(setCartList(newCart));
   };
   const payHandler = ()=>{
     if(state.formComplete){
@@ -34,7 +30,7 @@ const Bill = () => {
       {state.cart > 0 ? (
         <>
           <div>
-            {list.map((elem, index) => {
+            {state.cartList.map((elem, index) => {
               return (
                 <div
                   key={index}
@@ -80,9 +76,9 @@ const Bill = () => {
             </div>
             <div class="flex-none w-5/12 mr-4 mb-10 text-right">
               <div class="">&#8377;{Math.ceil(price)}</div>
-              <div class="">{price > 65 ? "Free" : <span>&#8377;15</span>}</div>
+              <div class="">{price > 65||price===0 ? "Free" : <span>&#8377;15</span>}</div>
               <div class="">
-                &#8377;{price > 65 ? Math.ceil(price) : Math.ceil(price + 15)}
+                &#8377;{price > 65||price===0  ? Math.ceil(price) : Math.ceil(price + 15)}
               </div>
             </div>
             <button class="bg-sky-900 hover:bg-sky-700 active:bg-green-900 rounded-xl w-full fixed bottom-0  py-2"

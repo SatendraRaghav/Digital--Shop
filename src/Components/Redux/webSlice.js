@@ -15,7 +15,9 @@ const initialValue = {
     userData:[],
     nav:false,
     payFinal:false,
-    uniqueList:[]
+    uniqueList:[],
+    navList:[],
+    navBoolean:false,
 }
 const webSlice = createSlice({
  name:"webReducer",
@@ -36,10 +38,12 @@ const webSlice = createSlice({
   setUserData:(state,action)=>{state.userData=action.payload},
   setNav:(state,action)=>{state.nav=action.payload},
   setPayFinal:(state,action)=>{state.payFinal = action.payload},
+  setNavList:(state,action)=>{state.uniqueList=action.payload},
+  isNavRender:(state,action)=>{state.navBoolean=action.payload},
   },
 })
 
 
 export default webSlice.reducer;
 export const{setList,setDemoList,setLogin,setLogComplete,setProduct,isProductRender,setFilterPara,isPaymentRender,
-isCartRender,cartCount,setCartList,setUserData,setNav,setPayFinal,setUniqueList}= webSlice.actions;
+isCartRender,cartCount,setCartList,setUserData,setNav,setPayFinal,setUniqueList,setNavList,isNavRender}= webSlice.actions;

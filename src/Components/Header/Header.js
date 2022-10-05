@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux/es/exports";
+import {Link} from 'react-router-dom';
 import {
   isCartRender,
   isPaymentRender,
@@ -14,9 +15,7 @@ const Header = () => {
     return state.webReducer;
   });
   const dispatch = useDispatch();
-  const cartHandler = () => {
-    dispatch(isPaymentRender(true));
-  };
+  
   const backHandler = () => {
     if (myState.payment) {
       dispatch(isPaymentRender(false));
@@ -54,8 +53,9 @@ const Header = () => {
             Raghav Store
           </span>
           <div class=" float-right sm:mx-3 rounded-xl bg-white">
+            <Link to="Cart">
             <button
-              onClick={cartHandler}
+              // onClick={cartHandler}
               class="float-right sm:mx-3 active:bg-green-500 hover:bg-sky-500"
             >
               <img src="../images/cart.webp" class="h-6 mb-0 pb-0" />
@@ -64,13 +64,16 @@ const Header = () => {
             <span class="text-sm p-0 mr-0 ml-4 rounded-lg  float-right text-green-900">
               {myState.cart}
             </span>
+            </Link>
           </div>
+          <Link to="Login">
           <button
-            onClick={() => dispatch(setLogin(true))}
+            // onClick={() => dispatch(setLogin(true))}
             class=" float-right mr-2 ml-0 pl-0"
           >
             <img src="../images/loginForm.jpg" class="h-6 mb-0 pb-0" />
           </button>
+          </Link>
         </header>
         <div class="text-center">
           <input
@@ -81,7 +84,7 @@ const Header = () => {
         </div>
       </div>
 
-      {myState.productBoolean ||
+      {/* {myState.productBoolean ||
       myState.cartBoolean ||
       myState.payment ||
       myState.loginBoolean ||
@@ -95,7 +98,7 @@ const Header = () => {
         </button>
       ) : (
         ""
-      )}
+      )} */}
     </>
   );
 };

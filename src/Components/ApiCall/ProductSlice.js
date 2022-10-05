@@ -7,10 +7,10 @@ const initialState = {
     error:""
 }
 
-export const fetchProduct = createAsyncThunk('user/fetchUsers',()=>
-{return axios
-   .get('https://fakestoreapi.com/products')
-   .then((response)=>response.data)
+export const fetchProduct = createAsyncThunk('user/fetchUsers', async ()=>
+{const response = await axios
+  .get('https://fakestoreapi.com/products');
+return response.data;
 })
 const ProductSlice = createSlice({
  name:'product',

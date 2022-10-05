@@ -13,19 +13,19 @@ const ProductDetails = () => {
   const buyClickHandler = () => {
     dispatch(setCartList([...state.cartList,...state.product]));
     dispatch(cartCount(1));
-    dispatch(isPaymentRender(true));
+    // dispatch(isPaymentRender(true));
   };
   const cartClickHandler = () => {
     dispatch(cartCount(1));
     const data = state.product[0];
-    const data1 = {...data,id:Math.random()};
-    dispatch(setProduct(data1));
-    dispatch(setCartList([...state.cartList,...state.product]));
+    const id1= Math.random()
+   const tempData= {...data,id:id1};
+    dispatch(setCartList([...state.cartList,tempData]));
   };
 
   return (
     <div class="bg-black h-[100vh] text-white">
-      {state.cartBoolean
+      {/* {state.cartBoolean
         ? state.cartList.map((elem, index) => {
             return (
               <div key={index}>
@@ -49,8 +49,9 @@ const ProductDetails = () => {
                 <div class="p-3 my-12 "></div>
               </div>
             );
-          })
-        : state.product.map((elem) => {
+          })*/}
+
+        {state.product.map((elem) => { 
             return (
               <div>
                 <div class=" w-[50%] h-[20vh] md:h-[35vh] lg:h-[45vh] mt-12  mr-auto ml-auto ">
