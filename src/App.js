@@ -6,7 +6,6 @@ import { fetchProduct } from "./Components/ApiCall/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Offer from "./Components/Offer";
 import ProductDetails from "./Components/Product/ProductDetails";
-import Section from "./Components/Section/Section";
 import Bill from "./Components/PaymentPage/Bill";
 import Login from "./Components/Login/Login";
 import SideNav from "./Components/Navbar/SideNav";
@@ -42,7 +41,7 @@ console.log("App COmpo")
       <div class="bg-black">
         <Header />
 
-        {state.payFinal ? (
+        {/* {state.payFinal ? (
           <Payment />
         ) : state.nav ? (
           <SideNav />
@@ -55,13 +54,13 @@ console.log("App COmpo")
             ) : state.productBoolean ? (
               <ProductDetails />
             ) : (
-              <>
+              <> */}
                 <Offer />
                 <TopNav />
-              </>
-            )}
-          </>
-        )}
+              {/* </>
+            )} */}
+          {/* </>
+        )} */}
       </div>
     </>
   );

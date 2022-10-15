@@ -3,12 +3,12 @@ import MenClothes from './MenClothes'
 import WomanClothes from './WomanClothes'
 import Electronics from './Electronics'
 import Jewerery from './Jewerery'
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from './Navbar'
+import SideNav from './SideNav'
 import Section from '../Section/Section'
 import Login from '../Login/Login'
 import Bill from '../PaymentPage/Bill'
-import Content from '../Section/Content'
 import ProductDetails from '../Product/ProductDetails'
 
 const TopNav 
@@ -16,6 +16,7 @@ const TopNav
   return (
     <>
     <Navbar />
+    
     <Routes>
     <Route path="/" element={<Section />}></Route>
     <Route index element={<Section />}></Route>
@@ -36,6 +37,7 @@ const TopNav
         path="/section"
         element={<Section />}
       ></Route>
+      <Route path = "/Side" element ={<SideNav />} />
     </Routes>
   </>
   )

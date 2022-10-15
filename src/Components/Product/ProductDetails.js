@@ -8,12 +8,9 @@ const ProductDetails = () => {
   });
 
   const dispatch = useDispatch();
-
-  // dispatch(isProductRender(false));
   const buyClickHandler = () => {
     dispatch(setCartList([...state.cartList,...state.product]));
     dispatch(cartCount(1));
-    // dispatch(isPaymentRender(true));
   };
   const cartClickHandler = () => {
     dispatch(cartCount(1));
@@ -25,32 +22,6 @@ const ProductDetails = () => {
 
   return (
     <div class="bg-black h-[100vh] text-white">
-      {/* {state.cartBoolean
-        ? state.cartList.map((elem, index) => {
-            return (
-              <div key={index}>
-                <div class=" w-[100%] h-[20vh] md:h-[35vh] lg:h-[45vh] mt-12  mr-auto ml-auto ">
-                  <img
-                    class="h-[100%] rounded-lg shadow-2xl mx-auto border-2 border-blue-900 "
-                    src={elem.image}
-                  ></img>
-                </div>
-                <h1 class="text-center text-lg font-extrabold">{elem.title}</h1>
-                <div class="bg-red-300 mt-6 py-2 pl-4">
-                  Price-&#8377;{elem.price}
-                </div>
-                <div class=" mt-8 font-extralight">{elem.description}</div>
-                <div class=" flex justify-around  border-[0.1px] border-white fixed bottom-0 w-[100%] bg-gray-900">
-                  <button onClick={buyClickHandler} class="btn">
-                    Buy Now
-                  </button>
-                </div>
-
-                <div class="p-3 my-12 "></div>
-              </div>
-            );
-          })*/}
-
         {state.product.map((elem) => { 
             return (
               <div>
